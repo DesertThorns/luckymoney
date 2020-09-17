@@ -30,7 +30,7 @@ public class HelloController {
     //3、@GetMapping("/say") + @PostMapping("/say") = @RequestMapping("/say")
     @GetMapping("/say")
 //    @RequestMapping("/say")
-    public String say(@RequestParam(value = "id",required = false,defaultValue = "0") Integer age) {
+    public String say(@RequestParam(value = "id", required = false, defaultValue = "0") Integer age) {
 //        System.out.println("跟慕课网廖师兄学springboot。");
 //        return "跟慕课网廖师兄学springboot。";
 //        return "说明：" + limitConfig.getDescription();

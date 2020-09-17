@@ -20,6 +20,7 @@ public class LuckymoneyController {
     private LuckymoneyRepository repository;
     @Autowired
     private LuckymoneyService service;
+
     /**
      * 获取红包列表
      */
@@ -39,11 +40,12 @@ public class LuckymoneyController {
         luckymoney.setMoney(money);
         return repository.save(luckymoney);
     }
+
     /**
      * 通过id查询红包
      */
     @GetMapping("luckymoneys/{id}")
-    public Luckymoney findById(@PathVariable("id") Integer id){
+    public Luckymoney findById(@PathVariable("id") Integer id) {
         return repository.findById(id).orElse(null);
     }
 
@@ -52,9 +54,9 @@ public class LuckymoneyController {
      */
     @PutMapping("luckymoneys/{id}")
     public Luckymoney update(@PathVariable("id") Integer id,
-                             @RequestParam("consumer") String consumer){
+                             @RequestParam("consumer") String consumer) {
         Optional<Luckymoney> optional = repository.findById(id);
-        if(optional.isPresent()){
+        if (optional.isPresent()) {
             Luckymoney luckymoney = new Luckymoney();
             luckymoney.setId(id);
             luckymoney.setConsumer(consumer);
@@ -67,7 +69,7 @@ public class LuckymoneyController {
      * 这是事务提交，学习@Transactional注解。
      */
     @GetMapping("/luckymoneys/two")
-    public void createTwo(){
+    public void createTwo() {
         service.createTwo();
     }
 

@@ -23,7 +23,7 @@ public class LuckymoneyService {
      * 例如：扣库存 > 创建订单
      */
     @Transactional
-    public void createTwo(){
+    public void createTwo() {
         Luckymoney luckymoney1 = new Luckymoney();
         luckymoney1.setProducer("刘成虎");
         luckymoney1.setMoney(new BigDecimal("520"));
