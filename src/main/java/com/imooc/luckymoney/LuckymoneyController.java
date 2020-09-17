@@ -63,8 +63,13 @@ public class LuckymoneyController {
         return null;
     }
 
+    /**
+     * 这是事务提交，学习@Transactional注解。
+     */
     @GetMapping("/luckymoneys/two")
     public void createTwo(){
         service.createTwo();
     }
+
+
 }
